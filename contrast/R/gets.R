@@ -16,5 +16,6 @@ getCoefficients.default <- function(fit, ...)
 
 getCoefficients.lme <- function(fit, ...)
 {
-   fixef(fit)
+  library(nlme)
+   nlme:::fixef(fit)
 }
