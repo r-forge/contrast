@@ -1,0 +1,14 @@
+-------------------
+Version: 0.11
+Date: 2009-07-06
+
+Cleaned up the package vignette a little
+
+-------------------
+Version: 0.10
+Date: 2009-07-06
+
+Added specific namespace calls to nlme so that lme4 methods do not interfere.
+
+
+
