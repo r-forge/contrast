@@ -100,7 +100,7 @@ Arguments to the contast functions are:
 
   \bold{\code{fcFun}}: a function to transform the numerator and denominator of fold changes
   
-  \bold{\code{fcType}}:  a character string: "simple" or "signed"
+  \bold{\code{fcType}}:  a character string: "simple", "log" or "signed"
   
 }
 
