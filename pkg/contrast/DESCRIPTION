@@ -1,6 +1,6 @@
 Package: contrast
-Version: 0.12
-Date: 2009-10-15
+Version: 0.13
+Date: 2010-02-12
 Title: A collection of contrast methods
 Author: Max Kuhn, contributions from Steve Weston, Jed Wing and James Forester
 Maintainer: Max Kuhn <max.kuhn@pfizer.com>
