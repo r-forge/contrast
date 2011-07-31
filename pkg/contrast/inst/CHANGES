@@ -1,4 +1,15 @@
 -------------------
+Version: 0.14
+Date: 2011-07-31
+
+An error check was added for lme models that will fail if the covariance 
+matrix of the variance-covariance coefficients has issues (since lme() 
+counts the number of random effects when calculating degrees of freedom).
+
+With lme(), this problem is signaled by lmeObject$apVar being a character 
+string (eg. "Non-positive definite approximate variance-covariance")
+
+-------------------
 Version: 0.13
 Date: 2010-02-12
 
