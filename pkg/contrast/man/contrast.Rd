@@ -51,7 +51,7 @@ contrast(fit, \dots)
 }
 
 \details{
-These functions mirror \code{contrast.Design}. 
+These functions mirror \code{contrast.rms}. 
 
 There are some between-package inconsistencies regarding degrees of freedom in some models. See the package vignette for more details.
 
@@ -82,7 +82,7 @@ Arguments to the contast functions are:
   
   \bold{\code{cnames}}:  vector of character strings naming the contrasts when
   \code{type="individual"}.  Usually \code{cnames} is not necessary as
-  \code{contrast.Design} tries to name the contrasts by examining which
+  \code{contrast.rms} tries to name the contrasts by examining which
   predictors are varying consistently in the two lists.  \code{cnames} will
   be needed when you contrast "non-comparable" settings, e.g., you
   compare \code{list(treat="drug", age=c(20,30))} with
@@ -105,7 +105,7 @@ Arguments to the contast functions are:
 }
 
 \seealso{
-  \code{\link[Design]{contrast.Design}}, \code{\link[sandwich]{vcovHC}}
+  \code{\link[rms]{contrast.rms}}, \code{\link[sandwich]{vcovHC}}
 }
 \examples{
 library(nlme)
@@ -114,10 +114,9 @@ Orthodont2$newAge <- Orthodont$age - 11
 fm1Orth.lme2 <- lme(distance ~ Sex*newAge, data = Orthodont2, random = ~ newAge | Subject)
 summary(fm1Orth.lme2)
 
-contrast(
-   fm1Orth.lme2,
-   a = list(Sex = levels(Orthodont2$Sex), newAge = 8 - 11),
-   b = list(Sex = levels(Orthodont2$Sex), newAge = 10 - 11))
+contrast(fm1Orth.lme2,
+         a = list(Sex = levels(Orthodont2$Sex), newAge = 8 - 11),
+         b = list(Sex = levels(Orthodont2$Sex), newAge = 10 - 11))
 
 }
 \keyword{models}

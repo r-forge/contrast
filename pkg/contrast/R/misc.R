@@ -1,4 +1,4 @@
-# generic functions defined in Design
+# generic functions defined in rms
 #
 #   contrast <- function(fit, ...) UseMethod("contrast")
 #   gendata <- function(fit, ...) UseMethod("gendata")
@@ -18,10 +18,9 @@ formula.gls <- function(x, ..., env=NULL)
 coef.geese <- function(object, ...) object$beta
 vcov.geese <- function(object, ...) object$vbeta
 
-# This function replaces the function of the same name defined
-# in the Design package, which had a bug, making gendata unusable
-# on non-Design objects
-gendata.default <- function(fit, factors, ..., env=NULL)
+# This function mimics rms:::gendata, which is unusable
+# on non-rms objects
+generateData <- function(fit, factors, ..., env=NULL)
 {
    tt <- tryCatch(terms(fit), error=function(e) terms(formula(fit, env=env)))
    order <- attr(tt, 'order')

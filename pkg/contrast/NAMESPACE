@@ -1,5 +1,5 @@
 # Generic functions formula, coef, and vcov are defined in stats package
-import(stats)
+import(stats,rms)
 
 #import(MASS)
 

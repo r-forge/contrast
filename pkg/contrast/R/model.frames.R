@@ -1,6 +1,6 @@
 
 # This function is used by contrast.lm instead of predictDesign,
-# which only works on Design objects.
+# which only works on rms objects.
 predictFrame <- function(object, newdata, env, na.action=na.fail)
 {
    tt <- tryCatch(terms(object), error=function(e) terms(formula(object, env=env)))

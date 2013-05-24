@@ -1,5 +1,5 @@
 # This method is used for printing the objects returned by the contrast methods.
-# It was copied from the Design package, written by Frank Harrell.
+# It was copied from the rms package, written by Frank Harrell.
 print.contrast <- function(x, X=FALSE, fun=function(u) u, ...)
 {
    testLabels <- switch(
