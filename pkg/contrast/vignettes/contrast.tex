@@ -91,7 +91,7 @@
 	
 \section{Introduction}
 
-The purpose of the \pkg{contrast} package is to provide a standardized interface for testing linear combinations of parameters from common regression models. The syntax mimics the \code{contrast.Design} function from the \pkg{Design} library. The contrast class has been extended in this package to linear models produced using the functions \code{lm}, \code{glm}, \texttt{gls}, \code{lme} and \code{geese}. Other \code{R} functions with similar purposes exist in \pkg{R}, but the interfaces are different and many require the user to specify the contrast in terms of the parameter contrast coefficient vector. This package aims to simplify the process for the user.
+The purpose of the \pkg{contrast} package is to provide a standardized interface for testing linear combinations of parameters from common regression models. The syntax mimics the \code{contrast.Design} function from the \pkg{Design} library. The contrast class has been extended in this package to linear models produced using the functions \code{lm}, \code{glm}, \code{gls}, \code{lme} and \code{geese}. Other \code{R} functions with similar purposes exist in \pkg{R}, but the interfaces are different and many require the user to specify the contrast in terms of the parameter contrast coefficient vector. This package aims to simplify the process for the user.
 
 \section{Contrasts}
 
@@ -126,13 +126,12 @@ A summary of the design is given in Table \ref{designSummary1}.
  
 % latex.default(designSummary1, ctable = TRUE, rowname = NULL,      caption = "A summary of the diet experimental design", where = "h",      file = "") 
 %
-\ctable[ caption={A summary of the diet experimental design}, label=designSummary1, pos=h, ]{llr} {} {\FL\multicolumn{1}{c}{Diet}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{Freq}\NN
-\ML
+\ctable[caption={A summary of the diet experimental design},label=designSummary1,pos=h,]{llr}{}{\FL
+\multicolumn{1}{c}{Diet}&\multicolumn{1}{c}{Group}&\multicolumn{1}{c}{Freq}\ML
 high fat&treatment&$6$\NN
 low fat&treatment&$6$\NN
 high fat&vehicle&$6$\NN
-low fat&vehicle&$6$\NN
-\LL
+low fat&vehicle&$6$\LL
 }
 The study design was a two--way factorial with $n=24$. The cell means can be labeled as in Table \ref{design1Cells}.
 
@@ -201,11 +200,11 @@ groupvehicle             -0.56867    0.07380  -7.706 2.07e-07 ***
 dietlow fat              -0.44633    0.07380  -6.048 6.52e-06 ***
 groupvehicle:dietlow fat  0.28150    0.10436   2.697   0.0139 *  
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 0.1278 on 20 degrees of freedom
-Multiple R-squared: 0.8447,	Adjusted R-squared: 0.8215 
-F-statistic: 36.27 on 3 and 20 DF,  p-value: 2.79e-08 
+Multiple R-squared:  0.8447,	Adjusted R-squared:  0.8215 
+F-statistic: 36.27 on 3 and 20 DF,  p-value: 2.79e-08
 \end{Soutput}
 \end{Schunk}
 
@@ -337,7 +336,7 @@ groupvehicle             -0.38839    0.04928  -7.882 1.47e-07 ***
 dietlow fat              -0.31104    0.04680  -6.647 1.80e-06 ***
 groupvehicle:dietlow fat  0.18929    0.07730   2.449   0.0237 *  
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for gaussian family taken to be 315.6268)
 
@@ -379,8 +378,8 @@ To get the materials, three donors provided materials. These donors provided (al
 
 % latex.default(example2Table, ctable = TRUE, rowname = NULL, caption = "A summary of the stem cell experimental design",      where = "h", file = "") 
 %
-\ctable[ caption={A summary of the stem cell experimental design}, label=example2Table, pos=h, ]{llr} {} {\FL\multicolumn{1}{c}{Day}&\multicolumn{1}{c}{Configuration}&\multicolumn{1}{c}{Number of Donors}\NN
-\ML
+\ctable[caption={A summary of the stem cell experimental design},label=example2Table,pos=h,]{llr}{}{\FL
+\multicolumn{1}{c}{Day}&\multicolumn{1}{c}{Configuration}&\multicolumn{1}{c}{Number of Donors}\ML
 1&A&$3$\NN
 2&A&$0$\NN
 4&A&$0$\NN
@@ -392,8 +391,7 @@ To get the materials, three donors provided materials. These donors provided (al
 4&C&$3$\NN
 1&D&$3$\NN
 2&D&$3$\NN
-4&D&$3$\NN
-\LL
+4&D&$3$\LL
 }
 
 The one of the goal of this experiment was to assess pre--specified differences in the configuration at each time point. For example, the differences between configurations A and B at day one is of interest. Also, the differences between configurations C and D at each time points were important.
@@ -477,8 +475,8 @@ In this example, $n=23$ and $p=8$. This model estimates the residual variance an
 \begin{Soutput}
 gls model parameter contrast
 
-   Contrast       S.E.      Lower   Upper    t df Pr(>|t|)
-1 0.1076667 0.04766072 0.01425337 0.20108 2.26 15   0.0392
+   Contrast       S.E.      Lower     Upper    t df Pr(>|t|)
+1 0.1076667 0.04766072 0.00608024 0.2092531 2.26 15   0.0392
 
 Contrast coefficients:
   (Intercept) group1:B group1:C group1:D group2:C group2:D group4:C group4:D
@@ -556,8 +554,8 @@ Number of Groups: 3
 \begin{Soutput}
 lme model parameter contrast
 
-   Contrast       S.E.      Lower   Upper    t df Pr(>|t|)
-1 0.1076667 0.04766072 0.01425337 0.20108 2.26 13   0.0417
+   Contrast       S.E.       Lower     Upper    t df Pr(>|t|)
+1 0.1076667 0.04766072 0.004701935 0.2106314 2.26 13   0.0417
 
 Contrast coefficients:
   (Intercept) group1:B group1:C group1:D group2:C group2:D group4:C group4:D
@@ -591,21 +589,21 @@ Mean Model:
 
  Coefficients:
                 estimate      san.se         wald            p
-(Intercept)  6.457722542 0.030377051 4.519262e+04 0.000000e+00
-group1:B     0.135794630 0.064029822 4.497805e+00 3.393840e-02
-group1:C    -0.108696851 0.020631757 2.775630e+01 1.375997e-07
-group1:D     0.029699999 0.038863285 5.840283e-01 4.447377e-01
-group2:C     0.046523041 0.009171127 2.573302e+01 3.920608e-07
-group2:D    -0.019772151 0.023586890 7.026944e-01 4.018798e-01
-group4:C     0.085212961 0.020805608 1.677453e+01 4.209444e-05
-group4:D     0.007844728 0.014837328 2.795403e-01 5.970027e-01
+(Intercept)  6.457722542 0.026389560 5.988175e+04 0.000000e+00
+group1:B     0.135794630 0.050258381 7.300426e+00 6.893827e-03
+group1:C    -0.108696851 0.021072464 2.660745e+01 2.492803e-07
+group1:D     0.029699999 0.038955648 5.812621e-01 4.458180e-01
+group2:C     0.046523041 0.009556373 2.370009e+01 1.125773e-06
+group2:D    -0.019772151 0.023979491 6.798732e-01 4.096304e-01
+group4:C     0.085212961 0.020968201 1.651539e+01 4.825666e-05
+group4:D     0.007844728 0.014919471 2.764706e-01 5.990239e-01
 
 Scale Model:
  Scale Link:                identity 
 
  Estimated Scale Parameters:
             estimate   san.se     wald           p
-(Intercept) 3633.935 1316.328 7.621251 0.005768444
+(Intercept) 3633.935 1393.139 6.804018 0.009095294
 
 Correlation Model:
  Correlation Structure:     exchangeable 
@@ -613,7 +611,7 @@ Correlation Model:
 
  Estimated Correlation Parameters:
        estimate    san.se     wald           p
-alpha 0.6081796 0.2021482 9.051568 0.002624697
+alpha 0.6081796 0.2336629 6.774606 0.009246391
 
 Returned Error Value:    0 
 Number of clusters:   6   Maximum cluster size: 7 
@@ -628,8 +626,8 @@ Number of clusters:   6   Maximum cluster size: 7
 \begin{Soutput}
 geese model parameter contrast
 
-    Contrast       S.E.      Lower     Upper    Z df Pr(>|Z|)
-1 0.07736823 0.02952906 0.01949233 0.1352441 2.62 NA   0.0088
+    Contrast     S.E.      Lower     Upper    Z df Pr(>|Z|)
+1 0.07736823 0.029537 0.01947678 0.1352597 2.62 NA   0.0088
 
 Contrast coefficients:
   (Intercept) group1:B group1:C group1:D group2:C group2:D group4:C group4:D

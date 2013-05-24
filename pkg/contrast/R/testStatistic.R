@@ -1,5 +1,5 @@
 ## this is a utility function that is called from contrast.lm
-testStatistic <- function(fit, designMatrix, critVal, params=getCoefficients(fit), covMatrix=vcov(fit))
+testStatistic <- function(fit, designMatrix, params=getCoefficients(fit), covMatrix=vcov(fit), conf.int = 0.95)
 {
   est <- drop(designMatrix %*% params)
   v <- drop((designMatrix %*% covMatrix) %*% t(designMatrix))
@@ -15,6 +15,11 @@ testStatistic <- function(fit, designMatrix, critVal, params=getCoefficients(fit
                  gls = fit$dims$N -  fit$dims$p,
                  lme = fit$dims$N -  length(params) - ncol(fit$apVar),      
                  geese = NA)
+
+  critVal <- if (!(class(fit)[1] %in% "geese"))
+    qt((1 + conf.int) / 2, dfdm)
+  else
+    qnorm((1 + conf.int) / 2)
   
   P <- switch(class(fit)[1],
               lm =,
@@ -31,5 +36,6 @@ testStatistic <- function(fit, designMatrix, critVal, params=getCoefficients(fit
        df = dfdm,
        Pvalue=P,
        var=v,
-       X=designMatrix)
+       X=designMatrix,
+       df.residual = dfdm)
 }

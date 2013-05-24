@@ -100,7 +100,7 @@ options(useFancyQuotes = FALSE, width = 80)
 	
 \section{Introduction}
 
-The purpose of the \pkg{contrast} package is to provide a standardized interface for testing linear combinations of parameters from common regression models. The syntax mimics the \code{contrast.Design} function from the \pkg{Design} library. The contrast class has been extended in this package to linear models produced using the functions \code{lm}, \code{glm}, \texttt{gls}, \code{lme} and \code{geese}. Other \code{R} functions with similar purposes exist in \pkg{R}, but the interfaces are different and many require the user to specify the contrast in terms of the parameter contrast coefficient vector. This package aims to simplify the process for the user.
+The purpose of the \pkg{contrast} package is to provide a standardized interface for testing linear combinations of parameters from common regression models. The syntax mimics the \code{contrast.Design} function from the \pkg{Design} library. The contrast class has been extended in this package to linear models produced using the functions \code{lm}, \code{glm}, \code{gls}, \code{lme} and \code{geese}. Other \code{R} functions with similar purposes exist in \pkg{R}, but the interfaces are different and many require the user to specify the contrast in terms of the parameter contrast coefficient vector. This package aims to simplify the process for the user.
 
 \section{Contrasts}
 

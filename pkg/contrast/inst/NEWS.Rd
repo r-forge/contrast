@@ -8,6 +8,8 @@
 \item If the sandwich estimate failed, the traditional covariance estimator is used instead.
 
 \item Moved to a real NEWS file format.
+
+\item A bug was fixed (spotted by Thorn Thaler) where normal (not t) distributions were being used with \code{lme} and \code{gls} models to calculate confidence intervals. 
 }
 }
 
